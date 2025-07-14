@@ -1,0 +1,19 @@
+name: Upload Local File on Change
+
+on:
+  push:
+    paths:
+      - 'argocdnci/cicddir/argocdtest.yaml'  # Replace with your actual file path
+    branches:
+      - main  # or your default branch
+
+jobs:
+  notify-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log file change
+        run: echo "File has been updated and pushed to the repository."
+
