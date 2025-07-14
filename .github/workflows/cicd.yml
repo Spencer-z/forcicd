@@ -1,12 +1,6 @@
 name: Upload Local File on Change
 
-on:
-  push:
-    paths:
-      - 'cicddir/argocdtest.yaml'  # Replace with your actual file path
-    branches:
-      - main  # or your default branch
-
+on: [push]
 jobs:
   notify-upload:
     runs-on: ubuntu-latest
